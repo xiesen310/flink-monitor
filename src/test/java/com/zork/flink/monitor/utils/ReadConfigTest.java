@@ -18,7 +18,7 @@ public class ReadConfigTest {
     @Test
     public void readResource() {
         try {
-            String path = this.getClass().getResource("/streamx/1.conf").getPath();
+            String path = this.getClass().getResource("/streamx/empty.conf").getPath();
             String read = ReadConfig.read(path);
             System.out.println(read);
         } catch (Exception e) {

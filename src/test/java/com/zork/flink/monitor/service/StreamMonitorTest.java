@@ -109,7 +109,7 @@ public class StreamMonitorTest {
 
     @Test
     public void startJob() {
-        Resp resp = streamMonitor.startJob("1.conf");
+        Resp resp = streamMonitor.startJob("empty.conf");
         printObject(resp);
 
     }
