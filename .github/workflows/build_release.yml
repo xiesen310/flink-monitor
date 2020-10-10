@@ -24,7 +24,7 @@ jobs:
           maven-version: 3.6.1
 
       - name: mvn info
-          run: mvn --version
+          run: mvn -v
       - name: build
           run: mvn clean package -Dmaven.test.skip=true
 
