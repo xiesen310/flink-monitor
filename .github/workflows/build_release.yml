@@ -1,0 +1,22 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+name: Create Release
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Maven
+        uses: aahmed-se/setup-maven@v3
+        with:
+          maven-version: 3.6.1
+          git-release-bot-name: "xiesen310"
+          git-release-bot-email: "xiesen310@163.com"
+          maven-args: "-Dmaven.javadoc.skip=true -DskipTests -DskipITs -Ddockerfile.skip -DdockerCompose.skip"
