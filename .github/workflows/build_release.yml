@@ -18,8 +18,11 @@ jobs:
         with:
           java-version: 8
 
-      - name: Release Maven package
-          uses: samuelmeuli/action-maven-publish@v1
+      - name: Set up Maven
+        uses: aahmed-se/setup-maven@v3
+        with:
+          maven-version: 3.6.1
+
       - name: mvn info
           run: mvn --version
       - name: build
