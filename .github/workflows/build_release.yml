@@ -19,6 +19,10 @@ jobs:
       - name: Build with Maven
         run:
           mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-      - name: mvn deploy
-        run:
-          mvn deploy -Dregistry=https://maven.pkg.github.com/xiesen310 -Dtoken=GH_TOKEN
+      - name: Publish Docker
+        uses: elgohr/Publish-Docker-Github-Action@2.11
+        with:
+          name: owner/repository/image
+          username: xiesen310
+          password: xiesen232880
+          registry: docker.pkg.github.com
