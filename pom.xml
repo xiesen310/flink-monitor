@@ -14,6 +14,15 @@
     <name>flink-monitor</name>
     <description>flink monitor</description>
 
+    <!-- mvn deploy -Dregistry=https://maven.pkg.github.com/xiesen310 -Dtoken=GH_TOKEN -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/xiesen310/repo</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <java.version>1.8</java.version>
         <fastjson.version>1.2.72</fastjson.version>

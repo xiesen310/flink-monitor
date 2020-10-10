@@ -19,3 +19,6 @@ jobs:
       - name: Build with Maven
         run:
           mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+      - name: mvn deploy
+        run:
+          mvn deploy -Dregistry=https://maven.pkg.github.com/xiesen310 -Dtoken=GH_TOKEN
